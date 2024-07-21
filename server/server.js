@@ -28,6 +28,10 @@ const fetchNewsData = async (url) => {
   }
 };
 
+app.get("/api/health", (req, res) => {
+  res.send("API is up and running!");
+});
+
 // API endpoint to get posts
 app.get("/api/posts", async (req, res) => {
   const { page = 1, pageSize = 10, query, sortBy, source } = req.query;
@@ -43,7 +47,7 @@ app.get("/api/posts", async (req, res) => {
     const data = await fetchNewsData(url);
     res.json(data);
   } catch (error) {
-    console.error("Error in /api/posts", error);
+    console.error("Error in /api/posts:", error.message);
     res.status(500).json({ error: "Error fetching data from NewsAPI" });
   }
 });
