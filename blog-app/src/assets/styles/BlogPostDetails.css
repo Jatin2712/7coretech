@@ -1,0 +1,39 @@
+.card {
+    border: none;
+    border-radius: 8px;
+}
+
+.card-body {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+}
+
+.card-title {
+    color: #333;
+}
+
+.card-text {
+    color: #555;
+}
+
+.btn-primary {
+    background-color: #f39c12;
+    border-color: #f39c12;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e67e22;
+    border-color: #e67e22;
+}
+
+.btn-secondary {
+    background-color: #3498db;
+    border-color: #3498db;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
