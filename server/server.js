@@ -5,7 +5,12 @@ const app = express();
 const PORT = 5000;
 const NEWS_API_KEY = "ce7ca2f81fe948dba52fa0b1ed4a9e0a";
 
-app.use(cors());
+const corsOptions = {
+  origin: "https://7coretech-eight.vercel.app/",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 const fetchNewsData = async (url) => {
   try {
@@ -37,5 +42,5 @@ app.get("/api/posts", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on https://7coretech-5cop.vercel.app`);
 });
