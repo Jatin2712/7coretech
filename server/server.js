@@ -5,10 +5,10 @@ const app = express();
 const PORT = 5000;
 const NEWS_API_KEY = "ce7ca2f81fe948dba52fa0b1ed4a9e0a";
 
-// CORS configuration
 const corsOptions = {
-  origin: "*", // Allow all origins for testing
-  optionsSuccessStatus: 200,
+  origin: "https://7coretech-eight.vercel.app",
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type,Authorization",
 };
 
 app.use(cors(corsOptions));
