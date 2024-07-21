@@ -5,23 +5,30 @@ const app = express();
 const PORT = 5000;
 const NEWS_API_KEY = "ce7ca2f81fe948dba52fa0b1ed4a9e0a";
 
+// CORS configuration
 const corsOptions = {
-  origin: "https://7coretech-eight.vercel.app/",
+  origin: "*", // Allow all origins for testing
   optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
 
+// Function to fetch data from NewsAPI
 const fetchNewsData = async (url) => {
   try {
     const response = await axios.get(url);
     return response.data;
   } catch (error) {
-    console.error("Error fetching data from NewsAPI", error);
+    console.error(
+      "Error fetching data from NewsAPI",
+      error.message,
+      error.response ? error.response.data : ""
+    );
     throw error;
   }
 };
 
+// API endpoint to get posts
 app.get("/api/posts", async (req, res) => {
   const { page = 1, pageSize = 10, query, sortBy, source } = req.query;
   let url = `https://newsapi.org/v2/everything?apiKey=${NEWS_API_KEY}&page=${page}&pageSize=${pageSize}`;
@@ -42,5 +49,5 @@ app.get("/api/posts", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on https://7coretech-5cop.vercel.app`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

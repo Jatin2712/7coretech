@@ -1,8 +1,9 @@
 import axios from "axios";
 
-//const API_BASE_URL = "http://localhost:5000";
+// Base URL for the API
 const API_BASE_URL = "https://7coretech-5cop.vercel.app";
 
+// Function to fetch posts from the API
 export const fetchPosts = async (page, pageSize, category) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/api/posts`, {
