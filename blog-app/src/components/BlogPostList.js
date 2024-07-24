@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from "react";
 import BlogPostItem from "./BlogPostItem";
 import { fetchPosts } from "../services/apiService";
-import "../assets/styles/style.css";
-import "../assets/styles/style.css";
 import "../assets/styles/BlogPostList.css";
 
 const BlogPostList = ({ category }) => {
