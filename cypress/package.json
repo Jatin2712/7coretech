@@ -8,5 +8,8 @@
   "keywords": [],
   "author": "Jatin Bundel",
   "license": "ISC",
-  "description": "Testing the website"
+  "description": "Testing the website",
+  "dependencies": {
+    "cypress": "^13.13.1"
+  }
 }
